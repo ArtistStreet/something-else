@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500|Jost:400,500,600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box; 
+}
+body{
+    background: #000;
+    /* -webkit-mask-image: linear-gradient(to top,black 70%,transparent 100%); */
+
+}
+
+.header{
+    height: 150px;
+    padding-bottom: var(--bil-spacing-7x) !important;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0.7) 10%,rgba(0, 0, 0, 0)) !important;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+.container{
+    position:relative;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
+
+}
+
+.image{
+    overflow: hidden;
+    height: 95vh;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    cursor: pointer;
+   
+}
+#image{
+    overflow: hidden;
+    height: 95vh;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    cursor: pointer;
+   
+}
+
+
+.image img:hover {
+    transform: scale(1.1);
+    background-color:#000;
+    opacity:0.3;
+    z-index: 2;
+}
+
+#image .hover:hover {
+     transform: scale(1.1);
+    background-color:#000;
+    opacity:0.3;
+    z-index: 2;
+} 
+/* #image .detail:hover .hover{
+    transform: scale(1.1);
+    background-color:#000;
+    opacity:0.3;
+} */
+
+/* #image img{
+    transition: all 0.3s ease-out;
+    transform: scale(1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+} */
+.image:hover  .detail h1{
+    display: block;
+}
+
+img{
+    transition: all 0.3s ease-out;
+    transform: scale(1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.image .detail{
+    position: absolute;
+
+    color: #815f30;
+    width: 100%;
+    text-align: center;
+}
+#image .detail{ 
+    display: none;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    color: #815f30;
+    cursor: auto;
+    z-index: 3;
+    transition: 0.5s ease;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50% );
+}
+#image .detail.active{
+    display: flex;
+}
+
+.image .detail h1{
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin-top: 60%;
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+}
+.image .detail .hide{
+    display: none;
+
+}
+.image.active .detail h1{
+    display: none;
+}
+.image.active .detail .hide{
+    color: #fff;
+    margin-top: 60%;
+    position: absolute;
+    transition: 0.4s;
+    left: 50%;
+    transform: translate(-50%);
+    display: block;
+}
+.image.active img{
+    transform: scale(1.1);
+    background-color:#000;
+    opacity:0.3;
+    z-index: 2;
+}
+
+h2{
+    color: bisque;
+}
+
+.wrap{
+    background-color: #171715;
+    width: 350px;
+    border-radius: 20px;
+    padding: 15px;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+}
+.wrap i {
+    cursor: pointer;
+}
+.top, .progress-area .timer,.controls,.music-list .Header,.music-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top i{
+    font-size: 30px;
+}
+.top span{
+    font-size: 18px;
+}
+.img-area{
+height: 250px;
+    width: 250px;
+    overflow: hidden;
+    margin: 15px 50px;
+}
+.img-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    border-radius: 50%;
+}
+
+.song{
+    padding: 0 0 25px;
+    text-align: center;
+}
+.song .name{
+    font-size: 25px;
+}
+.song .artist{
+    font-size: 20px;
+    opacity: 0.9;
+}
+.progress-area{
+    height: 6px;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+.progress-bar{
+    height: inherit;
+    position: relative;
+    width: 0%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgb(77 59 14) 0%,rgb(128, 87, 0) 100%);
+}
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #000;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.progress-area:hover .progress-bar::before{
+    opacity: 1;
+}
+.timer{
+    margin-top: 2px;
+}
+.timer span{
+    font-size: 13px;
+    color: #f0f0f0;
+}
+.controls{
+    margin:40px 0 5px 0;
+}
+.controls i {
+    font-size: 28px;
+    user-select: none;
+    background: linear-gradient(90deg, rgb(77 59 14) 0%,rgb(128, 87, 0) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.controls i:nth-child(2),.controls i:nth-child(4){
+    font-size: 43px;
+}
+.controls #prev{
+    margin-right: 13px;
+}
+.controls #next{
+    margin-left: 13px;}
+.controls .pause{
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 0 5px pink; */
+    background: linear-gradient(90deg, rgb(197 152 41) 0%,rgb(128, 87, 0) 100%);
+}
+.pause::before{
+    content: '';
+    position: absolute;
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: linear-gradient(90deg, rgb(128, 87, 0) 0%,rgb(29, 28, 28) 100%);
+}
+.pause i{
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background:inherit;
+    position: relative;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 43px;
+    text-align: center;
+}
+.music-list{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;    
+    padding: 15px 30px;
+    bottom: -55%;
+    opacity: 0;
+    background-color: #231e1e;
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+}
+.music-list.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.Header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+}
+/* .Header .row span{
+    margin-left: 5px;
+} */
+.music-list ul{
+    margin: 10px 0 ;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.music-list ul::-webkit-scrollbar{
+    width: 0;
+}
+.row i {
+    cursor: auto;
+}
+.music-list ul li {
+    list-style: none;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.music-list ul li:last-child{
+    border-bottom: 0px;
+  }
+  .music-list ul li .row span{
+    font-size: 17px;
+  }
+  .music-list ul li .row p{
+    opacity: 0.9;
+  }
+  ul li .audio-duration{
+    font-size: 16px;
+  }
+ul li.playing{
+color: white;
+}
+
+
+[type="range"] {
+    margin: 0;
+    padding: 0;
+    width: 52px;
+    height: 1.5em;
+    background: transparent;
+    outline: none;
+}
+
+[type="range"],
+[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+[type="range"]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+[type="range"]::-moz-range-thumb {
+    box-sizing: border-box;
+    border: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+}
+/* .vcontrols{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-grow: 2;
+} */
+.volume-control {
+    height: 100%;
+    /* align-items: center; */
+    /* height: 0; */
+    display: flex;
+}
+
+.volume-panel {
+    position: relative;
+    width: 0px;
+    transition: width .2s;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+}
+
+ .input-div {
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 52px;
+    height: 3px;
+}
+
+ .volume-input-div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #424242;
+}
+
+ .volume-input-div input {
+    position: absolute;
+    top: -8.5px;
+    cursor: pointer;
+}
+
+ .volume-input-div .volume-progress {
+    background: #b17f00;
+    width: 52px;
+    height: 100%;
+}
+/* @keyframes spin{
+    from{transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
+*/
+/* #volumeoff{
+    display: none;
+} */
+.material-icons .active{
+    display: none;
+}
+/* .material-icons {
+    display: inline;
+} */
+
+
+
+@media screen and  (max-width: 821px) {
+    .container {
+        display: block;
+    }
+    /* .wrap{
+
+    } */
+}
